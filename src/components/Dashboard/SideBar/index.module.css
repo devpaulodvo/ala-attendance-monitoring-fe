@@ -1,0 +1,21 @@
+.profilepic{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+}
+.listcontainer{
+    width:fit-content;
+    margin: 15px;
+}
+.linkcontainer {
+    width:fit-content;
+    height:100%;
+    margin:16px;
+    font-weight: 600;
+    color:rgb(42, 42, 42);
+}
+.piccontainer{
+    width:fit-content;
+    margin-top: 8px;
+    margin-left: 16px;
+}
