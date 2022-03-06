@@ -20,3 +20,8 @@
 .contentcontainer {
     width: 100%;
 }
+
+.eventscontainer {
+    height: 100%;
+    width:400px;
+}

@@ -10,7 +10,9 @@ const ViewPersonnel = () => {
         return result.verified === true&&
                 result.role !== 'admin' ;
     })
+    
     const dispatch = useDispatch();
+    
     useEffect( async () =>{
         const result = await Axios.get("http://localhost:3001/get/personnel");
         dispatch(setPersonnelList(result.data.data))

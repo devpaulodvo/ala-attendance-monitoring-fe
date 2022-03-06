@@ -31,7 +31,6 @@ const App = () => {
       token: res.tokenId,
     });
     dispatch(setUserData(result.data.googleData))
-    console.log(result.data)
     if(result.data.isAuth){
       dispatch(setAuth(true));
       navigate("/dashboard");
