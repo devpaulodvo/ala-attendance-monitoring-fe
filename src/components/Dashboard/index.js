@@ -25,7 +25,7 @@ const Dashboard = () => {
     },[])
 
     return(
-        <div  className={`${styles.maincontainer} antialiased`}>
+        <div  className={`${styles.maincontainer}`}>
             <TopHeader/>
             { role === 'admin' ? 
             <div className={`${styles.container}`}>

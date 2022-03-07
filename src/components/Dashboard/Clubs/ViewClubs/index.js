@@ -1,10 +1,9 @@
-import React from 'react'
-import { useSelector } from 'react-redux';
-import { selectClubs } from '../../../../slice/ClubSlice';
+import React, { useEffect, useState } from 'react'
+import Axios from 'axios';
 
 const ViewClubs = () => {
 
-    const clubs = useSelector(selectClubs)
+    const [clubs, setClubs] = useState({})
 
     //sort clubs by clubname
     const mydata = [].concat(clubs).sort((a,b)=>a.clubname > b.clubname ? 1 : -1).map((result, index)=>{
@@ -15,6 +14,17 @@ const ViewClubs = () => {
             </tr>
             )
     })
+
+    useEffect(()=>{
+        async function fetchMyApi() {
+            const resultclub = await Axios.get("http://localhost:3001/get/clubs");
+            const newClub = resultclub.data.data.filter((el)=>{
+                return el.status === true;
+            })
+            setClubs(newClub)
+        }
+        fetchMyApi()
+    },[])
 
     return(
         <div className={`flex`}>

@@ -33,9 +33,9 @@ const ViewPersonnel = () => {
                 {verifiedPersonnel.map((result, index) =>{
                 return(
                 <tr key={index}>
-                    <td className={`border-collapse border border-slate-400 capitalize`}>{result.given_name} {result.family_name}</td>
-                    <td className="border-collapse border border-slate-400">{result.email}</td>
-                    <td className="border-collapse border border-slate-400">{}</td>
+                    <td className={`${styles.td} border-collapse border border-slate-400 capitalize`}>{result.given_name} {result.family_name}</td>
+                    <td className={`${styles.td} border-collapse border border-slate-400`}>{result.email}</td>
+                    <td className={`${styles.td} border-collapse border border-slate-400`}>{}</td>
                 </tr>
                 )
                 })}

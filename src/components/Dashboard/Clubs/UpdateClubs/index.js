@@ -3,8 +3,6 @@ import Axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectClubs, setClubs } from '../../../../slice/ClubSlice';
 
-import styles from './index.module.css';
-
 const UpdateClubs = () => {
     const clubs = useSelector(selectClubs)
     const dispatch = useDispatch();
@@ -24,7 +22,11 @@ const UpdateClubs = () => {
                         dispatch(setClubs(resultclub.data.data))
                         alert(`${result.clubname} Status Updated!`)
                     }
-                }} className={`border-collapse border border-slate-400 cursor-pointer ${!result.status ? 'bg-red-200': 'bg-green-200'}`}>{result.status ? <span>Active</span>: <span>Not Active</span>}</td>
+                }} className={`border-collapse border border-slate-400 cursor-pointer 
+                            ${!result.status ? 'bg-red-200 hover:bg-green-200': 'bg-green-200 hover:bg-red-200'}`}>
+                            {result.status 
+                            ? <span>Active</span>
+                            : <span>Not Active</span>}</td>
             </tr>
             )
     })
