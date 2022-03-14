@@ -16,6 +16,9 @@ import PageNotFound from './components/PageNotFound';
 import { GoogleLogin } from 'react-google-login';
 import { GoogleLogout } from 'react-google-login';
 import Clubs from './components/Dashboard/Clubs';
+import SchoolYear from './components/Dashboard/SchoolYear';
+import Students from './components/Dashboard/Students';
+import Statistics from './components/Dashboard/Statistics';
 
 const clientId = process.env.REACT_APP_CLIENT_ID;
 
@@ -66,7 +69,10 @@ const App = () => {
           <Route path="/" element={<ProtectedRoutes isLoggedIn={isAuth}/>}>
             <Route path="dashboard" element={<Dashboard/>}>
               <Route path="personnel" element={<Personnel/>}/>
+              <Route path="students" element={<Students/>}/>
               <Route path="clubs" element={<Clubs/>}/>
+              <Route path="statistics" element={<Statistics/>}/>
+              <Route path="schoolyear" element={<SchoolYear/>}/>
             </Route>
           </Route>
           <Route path="*" element={<PageNotFound/>}/>
