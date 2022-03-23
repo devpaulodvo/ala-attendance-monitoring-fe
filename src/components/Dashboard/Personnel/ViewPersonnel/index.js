@@ -9,7 +9,7 @@ const ViewPersonnel = () => {
     const verifiedPersonnel = personnel.filter((result)=>{
         return result.verified === true&&
                 result.role !== 'admin' ;
-    })
+    });
     
     const dispatch = useDispatch();
     

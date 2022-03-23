@@ -11,11 +11,11 @@ const validate = values => {
     } else if (values.club.length > 21) {
       errors.club = 'Must be 15 characters or less';
     }
+
     return errors;
   };
 
 const AddClub = () =>{
-    const [clubName, setClubName] = useState("");
     const addClubHandler = async (club) => {
 
         const result = await Axios.post("http://localhost:3001/club/addclub", {
